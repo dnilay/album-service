@@ -27,6 +27,7 @@ public class AlbumController {
     @ExceptionHandler
     public ResponseEntity<ErrorResponse> handleError(AlbumNotFoundException anf)
     {
+        log.info("exception-handler on work ");
         ErrorResponse response=new ErrorResponse();
         response.setMessage(anf.getMessage());
         response.setStatus(HttpStatus.NOT_FOUND.value());
